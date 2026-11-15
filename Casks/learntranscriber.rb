@@ -1,8 +1,11 @@
 cask "learntranscriber" do
-  version "0.1.4"
-  sha256 "b2a76d563fb2caa146ef697ba9f2eef2b0de8ea5a29c63fab802a2c569f2b721"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://github.com/DeVFirmino/learntranscriber/releases/download/v#{version}/LearnTranscriber-arm64.dmg"
+  version "0.1.5"
+  sha256 arm:   "19caaeb1d17c26dcd61ebc3fb5205099f969e52dbe1d2219c5d0d6a872327274",
+         intel: "3883f2eb2d23689c2a719caf206e0bdf1f3096c967b538175d4fb4db52c280c6"
+
+  url "https://github.com/DeVFirmino/learntranscriber/releases/download/v#{version}/LearnTranscriber-#{arch}.dmg"
   name "LearnTranscriber"
   desc "Live transcription and an AI study assistant for classes and calls"
   homepage "https://learntranscriber.danieldias.dev/"
@@ -12,7 +15,6 @@ cask "learntranscriber" do
     strategy :github_latest
   end
 
-  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "LearnTranscriber.app"
